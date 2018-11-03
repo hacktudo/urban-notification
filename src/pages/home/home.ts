@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ModalController, NavController } from 'ionic-angular';
+
+import { EmergencyService } from '../../app/service/emergency.service'
+import { EmergencyRegistryPage } from '../emergency-registry/emergency-registry'
 
 @Component({
   selector: 'page-home',
@@ -7,8 +10,19 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  emergencyType = "comum";
+  emergencys = []
 
+  constructor(public navCtrl: NavController, 
+              public modalCtrl: ModalController, 
+              public emergencyService: EmergencyService) {
+
+    this.emergencys = emergencyService.getEmergencys(false);
+  }
+
+  openModal(emergencyType) {
+    let modal = this.modalCtrl.create(EmergencyRegistryPage);
+    modal.present();
   }
 
 }

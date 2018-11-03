@@ -8,11 +8,34 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <div padding>
+    <ion-segment [(ngModel)]="emergencyType">
+      <ion-segment-button value="comum">
+        Comum
+      </ion-segment-button>
+      <ion-segment-button value="emergency">
+        Emergência
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <div [ngSwitch]="emergencyType">
+    <ion-list *ngSwitchCase="'emergency'">
+      <a ion-item *ngFor="let emergency of emergencys" (click)="openModal(emergency.name)">
+        <ion-thumbnail item-start>
+          <img src="https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg">
+        </ion-thumbnail>
+        <h2>{{ emergency.name }}</h2>
+      </a>
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'comum'">
+      <a ion-item *ngFor="let emergency of emergencys" (click)="openModal(emergency.name)">
+        <ion-thumbnail item-start>
+          <img src="https://www.gettyimages.pt/gi-resources/images/Embed/new/embed2.jpg">
+        </ion-thumbnail>
+        <h2>{{ emergency.name }}</h2>
+      </a>
+    </ion-list>
+  </div>
 </ion-content>
