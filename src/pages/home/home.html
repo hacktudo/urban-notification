@@ -21,21 +21,25 @@
 
   <div [ngSwitch]="emergencyType">
     <ion-list *ngSwitchCase="'emergency'">
-      <a ion-item *ngFor="let emergency of emergencys" (click)="openModal(emergency.name)">
-        <ion-thumbnail item-start>
-          <img src="https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg">
-        </ion-thumbnail>
-        <h2>{{ emergency.name }}</h2>
-      </a>
+      <ng-container *ngFor="let emergency of emergencys">
+        <a ion-item *ngIf="emergency.emergency == true" (click)="openModal('EMERGENCY')">
+          <ion-thumbnail item-start>
+            <img src="https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg">
+          </ion-thumbnail>
+          <h2>{{ emergency.name }}</h2>
+        </a>
+      </ng-container>
     </ion-list>
   
     <ion-list *ngSwitchCase="'comum'">
-      <a ion-item *ngFor="let emergency of emergencys" (click)="openModal(emergency.name)">
-        <ion-thumbnail item-start>
-          <img src="https://www.gettyimages.pt/gi-resources/images/Embed/new/embed2.jpg">
-        </ion-thumbnail>
-        <h2>{{ emergency.name }}</h2>
-      </a>
+      <ng-container *ngFor="let emergency of emergencys">
+        <a ion-item *ngIf="emergency.emergency == false" (click)="openModal('COMUM')">
+          <ion-thumbnail item-start>
+            <img src="https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg">
+          </ion-thumbnail>
+          <h2>{{ emergency.name }}</h2>
+        </a>
+      </ng-container>
     </ion-list>
   </div>
 </ion-content>

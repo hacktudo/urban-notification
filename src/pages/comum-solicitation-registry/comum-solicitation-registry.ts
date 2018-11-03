@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { ViewController, NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'emergency-registry',
-  templateUrl: 'emergency-registry.html'
+  selector: 'comum-solicitation-registry',
+  templateUrl: 'comum-solicitation-registry.html'
 })
-export class EmergencyRegistryPage {
+export class ComumSolicitationRegistryPage {
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController) {
 

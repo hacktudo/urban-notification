@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Description
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">fechar</span>
+        <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h4>Tipo de Ocorrência</h4>
+
+  <ion-item>
+    <ion-label floating>Ocorrência</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <button ion-button color="danger">Enviar</button>
+
+</ion-content>

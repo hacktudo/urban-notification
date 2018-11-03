@@ -6,7 +6,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { EmergencyRegistryPage } from '../pages/emergency-registry/emergency-registry';
+import { ComumSolicitationRegistryPage } from '../pages/comum-solicitation-registry/comum-solicitation-registry';
+import { EmergencySolicitationRegistryPage } from '../pages/emergency-solicitation-registry/emergency-solicitation-registry';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,7 +20,8 @@ import { EmergencyService } from '../app/service/emergency.service'
     MyApp,
     HomePage,
     ListPage,
-    EmergencyRegistryPage
+    ComumSolicitationRegistryPage,
+    EmergencySolicitationRegistryPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { EmergencyService } from '../app/service/emergency.service'
     MyApp,
     HomePage,
     ListPage,
-    EmergencyRegistryPage
+    ComumSolicitationRegistryPage,
+    EmergencySolicitationRegistryPage
   ],
   providers: [
     StatusBar,
